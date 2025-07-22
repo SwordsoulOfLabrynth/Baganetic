@@ -3,6 +3,6 @@ git add .
 git commit -m "Add all new files"
 git push origin main
 
-//change to the main branch
+//up to date with the main branch before working on a new feature
 git checkout main
 git pull origin main
