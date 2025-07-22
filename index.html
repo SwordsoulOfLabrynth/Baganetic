@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Baganetic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
+    }
+    header {
+      background-color: #f9e4b7;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      color: #aa7739;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #5a3d1f;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://example.com/pagoda-hero.jpg') no-repeat center center/cover;
+      height: 90vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero h2 {
+      font-size: 3em;
+      background: rgba(0,0,0,0.4);
+      padding: 10px 20px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      background: rgba(0,0,0,0.3);
+      padding: 10px;
+    }
+    section {
+      padding: 60px 40px;
+    }
+    .section-title {
+      font-size: 2em;
+      color: #aa7739;
+      margin-bottom: 20px;
+    }
+    .about, .how-it-works, .features, .contact {
+      max-width: 900px;
+      margin: auto;
+    }
+    footer {
+      background-color: #f2dfc6;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+    }
+    .cta-button {
+      padding: 12px 25px;
+      margin-top: 20px;
+      background-color: #aa7739;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .cta-button:hover {
+      background-color: #8d5e2f;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Baganetic</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#how">How It Works</a>
+      <a href="pagodas.html">Pagodas</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Tourguide Assistant for Bagan Pagodas</h2>
+    <p>Explore Bagan like never before with intelligent shortest path navigation.</p>
+    <a href="pagodas.html" class="cta-button">Explore Pagodas</a>
+  </div>
+
+  <section class="about" id="about">
+    <h2 class="section-title">About Baganetic</h2>
+    <p>Baganetic is a digital tour assistant designed to help visitors navigate Bagan’s ancient pagodas with ease and efficiency. Utilizing shortest path algorithms, our system recommends optimal routes based on location, distance, and user preferences. Whether you're a tourist with limited time or a researcher exploring architecture, Baganetic saves time and enhances your journey.</p>
+  </section>
+
+  <section class="how-it-works" id="how">
+    <h2 class="section-title">How It Works</h2>
+    <p>Behind the scenes, Baganetic uses algorithms like Dijkstra’s or A* to calculate the shortest or most scenic paths between Bagan's hundreds of pagodas. Input your starting point and destination—or let the system generate an efficient full tour for you.</p>
+    <ul>
+      <li>🏛 Choose the pagodas you want to visit</li>
+      <li>📍 Let the system calculate the best route</li>
+      <li>📱 View map-based guidance on your screen</li>
+    </ul>
+  </section>
+
+  <section class="features">
+    <h2 class="section-title">Key Features</h2>
+    <ul>
+      <li>🗺 Interactive Pagoda Map</li>
+      <li>⚡ Fast, optimized route suggestions</li>
+      <li>🧭 Cultural and historical insights per site</li>
+      <li>🌐 Works offline with preloaded data (beta)</li>
+    </ul>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2 class="section-title">Contact & Credits</h2>
+    <p>Created by passionate students as a university special project.<br>
+    Email: baganetic.project@gmail.com<br>
+    Follow us: Facebook | GitHub | Instagram</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Baganetic. Made with love and logic 🧠💛</p>
+  </footer>
+
+</body>
+</html>
