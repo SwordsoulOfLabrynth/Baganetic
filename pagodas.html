@@ -7,13 +7,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { height: 100%; }
     body {
+      display: flex;
+      flex-direction: column;
       font-family: 'Open Sans', sans-serif;
       background: url('18816989483_bd5cd4caf2_b.jpg') no-repeat center center fixed;
       background-size: cover;
       color: #333;
     }
-
     header {
       background-color: #f9e4b7;
       padding: 20px 40px;
@@ -28,70 +30,80 @@
       font-family: 'Playfair Display', serif;
       color: #aa7739;
     }
+    nav { display: flex; }
     nav a {
       margin: 0 15px;
       text-decoration: none;
       color: #5a3d1f;
       font-weight: bold;
     }
-
-    .overlay {
-      background-color: rgba(255, 248, 240, 0.95);
-      min-height: 100vh;
-      padding: 60px 20px;
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
     }
-
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #5a3d1f;
+      margin: 4px 0;
+    }
+    @media(max-width:768px){
+      nav { display: none; flex-direction: column; position: absolute; top: 70px; right: 0; background: #f9e4b7; width: 200px; }
+      nav.active { display: flex; }
+      .hamburger { display: flex; }
+    }
+    .lang-toggle button {
+      background: none; border: none;
+      font-size: 0.9em; cursor: pointer;
+      color: #5a3d1f; margin-left: 10px;
+    }
+    .overlay {
+      background-color: rgba(255,248,240,0.95);
+      flex: 1;
+      padding: 40px;
+    }
     h2.title {
       font-family: 'Playfair Display', serif;
-      text-align: center;
-      font-size: 2.5em;
+      font-size: 2.2em;
       color: #aa7739;
-      margin-bottom: 40px;
+      text-align: center;
+      margin-bottom: 30px;
     }
-
     .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
-      max-width: 1000px;
+      grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 25px;
+      max-width: 1200px;
       margin: 0 auto;
     }
-
     .pagoda-item {
-      text-align: center;
       background: #ffffffdd;
-      border-radius: 15px;
-      padding: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-
-    .pagoda-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .pagoda-item img {
-      width: 100%;
       border-radius: 12px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform .2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    }
+    .pagoda-item:hover { transform: translateY(-3px); }
+    .pagoda-item img {
+      width: 100%; aspect-ratio:1;
       object-fit: cover;
-      aspect-ratio: 1 / 1;
+      border-radius: 8px;
       border: 2px solid #aa7739;
     }
-
     .pagoda-name {
-      margin-top: 10px;
+      margin-top: 8px;
       font-family: 'Playfair Display', serif;
-      color: #5a3d1f;
       font-size: 1.1em;
+      color: #5a3d1f;
     }
-
     footer {
       background-color: #f2dfc6;
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       font-size: 0.9em;
-      margin-top: 60px;
       color: #5a3d1f;
     }
 
@@ -99,55 +111,54 @@
     #pagoda-modal {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
+      top:0; left:0;
+      width:100%; height:100%;
+      background:rgba(0,0,0,0.6);
+      justify-content:center; align-items:center;
+      z-index:1000;
     }
-
-    #pagoda-modal .modal-content {
-      background: #fff8f0;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 500px;
-      width: 90%;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    .modal-content {
+      background:#fff8f0;
+      padding: 25px;
+      border-radius:10px;
+      max-width:500px;
+      width:90%;
+      text-align: center;
     }
-
-    #pagoda-modal h3 {
-      color: #aa7739;
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 10px;
+    .modal-img {
+      width:100%; border-radius:8px;
+      margin-bottom:15px;
     }
-
-    #pagoda-modal p {
-      color: #333;
-      font-size: 1em;
+    .modal-content h3 {
+      font-family:'Playfair Display'; color:#aa7739;
+      margin-bottom:10px;
     }
-
+    .modal-content p { color:#333; line-height:1.4; }
     .cta-button {
-      padding: 10px 20px;
-      background-color: #aa7739;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 1em;
-      margin-top: 20px;
+      margin-top:15px;
+      padding:10px 20px;
+      background:#aa7739;
+      color:#fff;
+      border:none;
+      border-radius:5px;
+      cursor:pointer;
     }
-
-    .cta-button:hover {
-      background-color: #8d5e2f;
-    }
+    .cta-button:hover { background:#8d5e2f; }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Baganetic</h1>
-    <nav>
+    <div style="display:flex; align-items:center;">
+      <div class="lang-toggle">
+        <button onclick="setLang('en')" id="btn-en">English</button> |
+        <button onclick="setLang('mm')" id="btn-mm">မြန်မာ</button>
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div><div></div><div></div>
+      </div>
+    </div>
+    <nav id="navMenu">
       <a href="index.html">Home</a>
       <a href="index.html#about">About</a>
       <a href="index.html#how">How It Works</a>
@@ -158,57 +169,125 @@
 
   <div class="overlay">
     <h2 class="title">Explore Pagodas of Bagan</h2>
-
-    <div class="grid-container">
-      <div class="pagoda-item" onclick="showPagodaInfo('Ananda Temple', 'Built in 1105 AD, Ananda Temple is one of the most revered temples in Bagan. Known for its massive golden stupa and standing Buddha statues.')">
-        <img src="778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg" alt="Ananda Temple">
-        <div class="pagoda-name">Ananda Temple</div>
-      </div>
-
-      <div class="pagoda-item" onclick="showPagodaInfo('Shwezigon Pagoda', 'The Shwezigon Pagoda is a prototype of Burmese stupas. It was built in the 11th century and houses relics of the Buddha.')">
-        <img src="778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg" alt="Shwezigon Pagoda">
-        <div class="pagoda-name">Shwezigon Pagoda</div>
-      </div>
-
-      <div class="pagoda-item" onclick="showPagodaInfo('Dhammayangyi Temple', 'Known for its massive brick structure, Dhammayangyi is the largest temple in Bagan. Built during King Narathu’s reign.')">
-        <img src="778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg" alt="Dhammayangyi Temple">
-        <div class="pagoda-name">Dhammayangyi Temple</div>
-      </div>
-
-      <div class="grid-container">
-      <div class="pagoda-item" onclick="showPagodaInfo('Ananda Temple', 'Built in 1105 AD, Ananda Temple is one of the most revered temples in Bagan. Known for its massive golden stupa and standing Buddha statues.')">
-        <img src="778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg" alt="Ananda Temple">
-        <div class="pagoda-name">Ananda Temple</div>
-      </div>
-
-      <!-- Add more pagodas as needed -->
+    <div class="grid-container" id="pagodaGrid">
+      <!-- Pagoda cards inserted by JS -->
     </div>
-    
   </div>
 
-  <!-- Modal -->
   <div id="pagoda-modal">
     <div class="modal-content">
-      <h3 id="modal-title"></h3>
-      <p id="modal-description"></p>
+      <img src="" alt="" class="modal-img" id="modalImg">
+      <h3 id="modalName"></h3>
+      <p id="modalDesc"></p>
       <button class="cta-button" onclick="closeModal()">Close</button>
     </div>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Baganetic — Smart Guide to Sacred Paths 🛕</p>
-  </footer>
+  <footer>&copy; 2025 Baganetic — Smart Guide to Sacred Paths 🛕</footer>
 
   <script>
-    function showPagodaInfo(name, description) {
-      document.getElementById('modal-title').innerText = name;
-      document.getElementById('modal-description').innerText = description;
-      document.getElementById('pagoda-modal').style.display = 'flex';
+    // Data including multilingual content
+    const pagodas = [
+      {
+        id: 'ananda',
+        img: '778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg',
+        en: {
+          name: 'Ananda Temple',
+          desc: 'Built in 1105 AD, one of Bagan’s most iconic temples.'
+        },
+        mm: {
+          name: 'အာနန္ဒာ ဘုရား',
+          desc: '၁၁၀၅ ခုနှစ်တွင် တည်ဆောက်ခဲ့ပြီး ပုဂံ၏ ထင်ရှားဆုံး ဘုရားတစ်ခုဖြစ်သည်။'
+        }
+      },
+      {
+        id: 'shwezigon',
+        img: '778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg',
+        en: {
+          name: 'Shwezigon Pagoda',
+          desc: 'An early prototype of Burmese stupas, built in 11th century.'
+        },
+        mm: {
+          name: 'ရွှေစေဂုံ ဘုရား',
+          desc: '၁၁ ရာစုတွင် တည်ဆောက်ခဲ့သော မြန်မာစတုရန်းပုံစံအခေတ်သစ် နမူနာတစ်ခု။'
+        }
+      },
+      {
+        id: 'dhammayangyi',
+        img: '778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg',
+        en: {
+          name: 'Dhammayangyi Temple',
+          desc: 'The largest temple in Bagan, notable for its massive brick structure.'
+        },
+        mm: {
+          name: 'ဓမ္မရာငြိဘုရား',
+          desc: 'ပုဂံရှိ အကြီးဆုံး ဘုရားဖြစ်ပြီး ကျောက်ဆောက်တည်ဆောက်မှုကြီးမားသည်။'
+        }
+      },
+      {
+        id: 'thatbyinnyu',
+        img: '778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg',
+        en: {
+          name: 'Thatbyinnyu Temple',
+          desc: 'Tallest temple in Bagan, with elegant terraces.'
+        },
+        mm: {
+          name: 'သက်ဘ္ဘိန္ညာ ဘုရား',
+          desc: 'ပုဂံ၏ အမြင့်ဆုံး ဘုရား ဖြစ်ပြီး စတုတျများထက်ခိုင်မာသည်။'
+        }
+      }
+    ];
+
+    // Populate grid
+    const grid = document.getElementById('pagodaGrid');
+    pagodas.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'pagoda-item';
+      card.onclick = () => openModal(p);
+      card.innerHTML = `
+        <img src="${p.img}" alt="">
+        <div class="pagoda-name" data-id="${p.id}"></div>`;
+      grid.appendChild(card);
+    });
+
+    // Manage language
+    function setLang(lang) {
+      localStorage.setItem('lang', lang);
+      updateNames();
+      highlightLang(lang);
+    }
+    function highlightLang(lang) {
+      document.getElementById('btn-en').style.fontWeight = lang=='en'?'bold':'normal';
+      document.getElementById('btn-mm').style.fontWeight = lang=='mm'?'bold':'normal';
+    }
+    function updateNames() {
+      const lang = localStorage.getItem('lang') || 'en';
+      document.querySelectorAll('.pagoda-name').forEach(el => {
+        const p = pagodas.find(x => x.id === el.dataset.id);
+        el.textContent = p[lang].name;
+      });
     }
 
+    // Modal
+    function openModal(p) {
+      const lang = localStorage.getItem('lang') || 'en';
+      document.getElementById('modalImg').src = p.img;
+      document.getElementById('modalName').textContent = p[lang].name;
+      document.getElementById('modalDesc').textContent = p[lang].desc;
+      document.getElementById('pagoda-modal').style.display = 'flex';
+    }
     function closeModal() {
       document.getElementById('pagoda-modal').style.display = 'none';
     }
+
+    // Hamburger menu
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('active');
+    }
+
+    // Init on load
+    setLang(localStorage.getItem('lang') || 'en');
+    highlightLang(localStorage.getItem('lang') || 'en');
   </script>
 </body>
 </html>
