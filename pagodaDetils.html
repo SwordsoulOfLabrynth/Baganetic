@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Baganetic - Ananda Temple</title>
+  <title>Baganetic - Ananda Temple Details</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     * {
@@ -17,25 +17,93 @@
       color: #333;
       line-height: 1.6;
     }
+/* header layout */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9e4b7;
+  padding: 16px 24px;
+  position: sticky; top: 0; z-index: 100;
+}
+.logo {
+  display: flex; align-items: center;
+}
+.logo h1 {
+  margin-left: 12px;
+  font-family: 'Playfair Display', serif;
+  color: #aa7739;
+  font-size: 1.6em;
+}
+/* inline nav */
+.nav-inline a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #5a3d1f;
+  font-weight: 600;
+  transition: color .3s;
+}
+.nav-inline a:hover { color: #aa7739; }
 
-    header {
-      background-color: #f9e4b7;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
+/* hamburger icon styling */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 28px; height: 24px;
+  background: none; border: none;
+  cursor: pointer; padding: 0;
+}
+.hamburger span {
+  display: block;
+  width: 100%; height: 3px;
+  background: #5a3d1f;
+  border-radius: 2px;
+  transition: transform .3s, opacity .3s;
+}
+
+/* side‑drawer */
+.nav-drawer {
+  position: fixed;
+  top: 0; left: -240px;            /* offscreen */
+  width: 220px; height: 100%;
+  background: #f9e4b7;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+  display: flex; flex-direction: column;
+  padding-top: 60px;
+  transition: left .3s ease;
+  z-index: 90;
+}
+.nav-drawer a {
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #5a3d1f;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.nav-drawer a:hover { background: #f2dfc6; }
+
+/* when open, slide the drawer in */
+body.nav-open .nav-drawer {
+  left: 0;
+}
+/* animate hamburger to X */
+body.nav-open .hamburger span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+body.nav-open .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+body.nav-open .hamburger span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
 
     header h1 {
       font-family: 'Playfair Display', serif;
       color: #aa7739;
       font-size: 1.8em;
     }
-
     nav a {
       margin: 0 12px;
       text-decoration: none;
@@ -46,6 +114,7 @@
     nav a:hover {
       color: #aa7739;
     }
+
 
     .breadcrumb {
       background-color: #f2dfc6;
@@ -60,14 +129,11 @@
       margin-right: 5px;
       font-weight: normal;
     }
-
-
     .container {
       max-width: 1000px;
       margin: auto;
       padding: 40px 20px;
     }
-
     .title {
       font-family: 'Playfair Display', serif;
       font-size: 2.5em;
@@ -76,39 +142,33 @@
       border-bottom: 2px solid #f2dfc6;
       padding-bottom: 10px;
     }
-
     .pagoda-section {
       display: flex;
       flex-wrap: wrap;
       gap: 30px;
       margin-bottom: 60px;
     }
-
     .pagoda-image {
       flex: 1;
       min-width: 250px;
       max-width: 320px;
     }
-
     .pagoda-image img {
       width: 100%;
       border-radius: 14px;
       border: 2px solid #aa7739;
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
-
     .pagoda-description {
       flex: 2;
       min-width: 250px;
     }
-
     .pagoda-description h2 {
       font-family: 'Playfair Display', serif;
       font-size: 1.6em;
       margin-bottom: 12px;
       color: #5a3d1f;
     }
-
     .read-more {
       background-color: #aa7739;
       color: white;
@@ -123,37 +183,40 @@
     .read-more:hover {
       background-color: #8d5e2f;
     }
+.map-section {
+  background-color: #f2dfc6;
+  padding: 50px 20px;
+  margin-top: 40px;
+  text-align: center;       /* center child elements */
+}
 
-    .map-section {
-      background-color: #f2dfc6;
-      padding: 50px 20px;
-      margin-top: 40px;
-    }
+.map-section iframe {
+  width: 100%;
+  max-width: 700px;         /* limit the width */
+  height: 320px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  margin: 0 auto;           /* center when narrower than 100% */
+  display: block;           /* needed to center via margin auto */
+}
 
     .map-section h2 {
       font-family: 'Playfair Display', serif;
-      color: #aa7739;
+      color: #5a3d1f;
       margin-bottom: 20px;
       text-align: center;
       font-size: 1.8em;
     }
 
-    .map-section iframe {
-      width: 100%;
-      height: 320px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
 
     .recommend-section {
       padding: 60px 20px;
       background-color: #fff;
     }
-
     .recommend-section h2 {
       font-family: 'Playfair Display', serif;
-      color: #aa7739;
+      color: #5a3d1f;
       text-align: center;
       margin-bottom: 40px;
       font-size: 2em;
@@ -166,7 +229,6 @@
       max-width: 1100px;
       margin: auto;
     }
-
     .recommend-card {
       background-color: #ffffffdd;
       padding: 12px;
@@ -175,12 +237,10 @@
       text-align: center;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .recommend-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 6px 15px rgba(0,0,0,0.08);
     }
-
     .recommend-card img {
       width: 100%;
       border-radius: 10px;
@@ -188,20 +248,17 @@
       height: 180px;
       object-fit: cover;
     }
-
     .recommend-card h3 {
       font-family: 'Playfair Display', serif;
       margin: 12px 0 8px;
       font-size: 1.2em;
       color: #5a3d1f;
     }
-
     .recommend-card p {
       font-size: 0.9em;
       color: #555;
       margin-bottom: 10px;
     }
-
     .recommend-card .read-more {
       background: none;
       color: #aa7739;
@@ -211,11 +268,9 @@
       cursor: pointer;
       transition: color 0.3s;
     }
-
     .recommend-card .read-more:hover {
       color: #8d5e2f;
     }
-
     footer {
       background-color: #f2dfc6;
       text-align: center;
@@ -224,7 +279,6 @@
       color: #5a3d1f;
       margin-top: 40px;
     }
-
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -244,16 +298,37 @@
 </head>
 <body>
 
-  <header>
+<header>
+  <div class="logo">
+    <!-- Hamburger toggle -->
+    <button class="hamburger" aria-label="Toggle side menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <h1>Baganetic</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="index.html#about">About</a>
-      <a href="index.html#how">How It Works</a>
-      <a href="pagodas.html">Pagodas</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
-  </header>
+  </div>
+  <!-- Inline nav, always visible at top -->
+  <nav class="nav-inline">
+    <a href="index.html">Home</a>
+    <a href="map.html">Map</a>
+    <a href="index.html#how">How It Works</a>
+    <a href="pagodas.html">Pagodas</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+</header>
+
+<!-- Side‑drawer menu, hidden by default -->
+<aside class="nav-drawer">
+  <a href="index.html">Home</a>
+  <a href="map.html">Map</a>
+  <a href="index.html#how">How It Works</a>
+  <a href="pagodas.html">Pagodas</a>
+  <a href="index.html#contact">Contact</a>
+</aside>
+
+
+
 
   <div class="breadcrumb">
     <a href="index.html">Home</a> / <a href="pagodas.html">Pagodas</a> / Ananda Temple
@@ -270,13 +345,13 @@
         <p>
           Built in 1105 AD, the Ananda Temple is one of the most iconic monuments of Bagan, featuring stunning architecture and sacred relics.
         </p>
-        <button class="read-more">Read More</button>
+        <button class="read-more" onclick="location.href='pagodaHistory.html'">Read More</button>
       </div>
     </div>
   </div>
 
   <div class="map-section">
-    <h2>| Map Location</h2>
+    <h2>| Pagoda Location</h2>
     <iframe 
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812.241341664037!2d94.86857961534084!3d21.17260768616596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30b5e5266e7f5e4d%3A0xe27912b77a317a8f!2sAnanda%20Temple!5e0!3m2!1sen!2smm!4v1626926268241!5m2!1sen!2smm" 
       allowfullscreen="" loading="lazy">
@@ -290,25 +365,25 @@
         <img src="778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg" alt="Shwezigon">
         <h3>Shwezigon Pagoda</h3>
         <p>An early prototype of Burmese stupas, built in 11th century</p>
-        <button class="read-more">Read more</button>
+        <button class="read-more" onclick="location.href='pagodaDetils.html'">Read more</button>
       </div>
       <div class="recommend-card">
         <img src="778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg" alt="Dhammayangyi">
         <h3>Dhammayangyi Temple</h3>
         <p>The largest temple in Bagan, known for its massive brickwork</p>
-        <button class="read-more">Read more</button>
+        <button class="read-more" onclick="location.href='pagodaDetils.html'">Read more</button>
       </div>
       <div class="recommend-card">
         <img src="778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg" alt="Thatbyinnyu">
         <h3>Thatbyinnyu Temple</h3>
         <p>Tallest pagoda in Bagan with elegant terraces</p>
-        <button class="read-more">Read more</button>
+        <button class="read-more" onclick="location.href='pagodaDetils.html'">Read more</button>
       </div>
       <div class="recommend-card">
         <img src="778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg" alt="Sulamani">
         <h3>Sulamani Temple</h3>
         <p>Known for its detailed frescoes and architectural harmony</p>
-        <button class="read-more">Read more</button>
+        <button class="read-more" onclick="location.href='pagodaDetils.html'">Read more</button>
       </div>
     </div>
   </div>
@@ -316,6 +391,19 @@
   <footer>
     &copy; 2025 Baganetic. Guiding Your Sacred Journey 🛕
   </footer>
+
+<script>
+  const btn = document.querySelector('.hamburger');
+  btn.addEventListener('click', () => {
+    document.body.classList.toggle('nav-open');
+  });
+  document.querySelectorAll('.nav-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.body.classList.remove('nav-open');
+    });
+  });
+</script>
+
 
 </body>
 </html>

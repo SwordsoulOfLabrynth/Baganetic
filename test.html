@@ -1,193 +1,138 @@
+<!-- UPDATED pagodas.html -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pagoda Details - Baganetic</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baganetic Pagodas</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      margin: 0;
       font-family: 'Open Sans', sans-serif;
-      background-color: #f9f6f1;
+      background: url('18816989483_bd5cd4caf2_b.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #333;
     }
-
     header {
-      background-color: #8b5e3c;
-      color: white;
-      padding: 1rem;
+      background-color: #f9e4b7;
+      padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
     }
-
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      color: #aa7739;
+    }
+    nav {
+      display: flex;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #5a3d1f;
+      font-weight: bold;
+    }
     .hamburger {
       display: none;
-      cursor: pointer;
       flex-direction: column;
-      gap: 4px;
+      cursor: pointer;
     }
-
     .hamburger div {
       width: 25px;
       height: 3px;
-      background-color: white;
-      border-radius: 2px;
+      background: #5a3d1f;
+      margin: 4px 0;
     }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: flex;
-      }
+    @media(max-width:768px){
+      nav { display: none; flex-direction: column; position: absolute; top: 70px; right: 0; background: #f9e4b7; width: 200px; }
+      nav.active { display: flex; }
+      .hamburger { display: flex; }
     }
-
-    h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-    }
-
-    div.breadcrumb {
-      background-color: #eee3d8;
-      padding: 0.5rem 1rem;
-      font-size: 0.9rem;
-    }
-
-    div.breadcrumb a {
-      text-decoration: none;
-      color: #8b5e3c;
-      margin-right: 5px;
-    }
-
-    .pagoda-container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .pagoda-header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
-
-    .pagoda-header img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1rem;
-    }
-
-    .pagoda-description {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      text-align: justify;
-    }
-
-    .recommend-section {
-      margin-top: 2rem;
-    }
-
-    .recommend-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .recommend-grid {
+    .grid-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-    }
-
-    .recommend-card {
-      background-color: #fdfaf6;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      transition: transform 0.2s;
+      margin: 40px;
     }
-
-    .recommend-card:hover {
+    .pagoda-card {
+      background: #fff8ec;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .pagoda-card:hover {
       transform: translateY(-5px);
     }
-
-    .recommend-card img {
+    .pagoda-card img {
       width: 100%;
-      height: 150px;
+      height: 200px;
       object-fit: cover;
     }
-
-    .recommend-card h3 {
-      margin: 0.5rem 0;
-      font-size: 1rem;
-      font-weight: bold;
-      color: #8b5e3c;
+    .pagoda-card h3 {
+      padding: 10px;
+      color: #5a3d1f;
+      font-family: 'Playfair Display', serif;
+    }
+    footer {
+      background: #f2dfc6;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      font-size: 0.9em;
+      color: #5a3d1f;
     }
   </style>
 </head>
-
 <body>
   <header>
     <h1>Baganetic</h1>
     <div class="hamburger" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
+      <div></div><div></div><div></div>
     </div>
+    <nav id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="pagodas.html">Pagodas</a>
+      <a href="pagodaDetils.html">Details</a>
+    </nav>
   </header>
 
-  <nav class="breadcrumb">
-    <a href="index.html">Home</a> &gt;
-    <a href="pagodas.html">Pagodas</a> &gt;
-    <span>Pagoda Detail</span>
-  </nav>
+  <section class="grid-container">
+    <a href="pagodaDetils.html" class="pagoda-card">
+      <img src="778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg" alt="Ananda Temple">
+      <h3>Ananda Temple</h3>
+    </a>
+    <a href="pagodaDetils.html" class="pagoda-card">
+      <img src="19250037408_52f957b1f3_b.jpg" alt="Shwezigon Pagoda">
+      <h3>Shwezigon Pagoda</h3>
+    </a>
+    <a href="pagodaDetils.html" class="pagoda-card">
+      <img src="18816989483_bd5cd4caf2_b.jpg" alt="Dhammayangyi Temple">
+      <h3>Dhammayangyi Temple</h3>
+    </a>
+    <a href="pagodaDetils.html" class="pagoda-card">
+      <img src="778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg" alt="Thatbyinnyu Temple">
+      <h3>Thatbyinnyu Temple</h3>
+    </a>
+  </section>
 
-  <div class="pagoda-container">
-    <div class="pagoda-header">
-      <img src="images/sample-pagoda.jpg" alt="Pagoda Image">
-      <h2>Shwezigon Pagoda</h2>
-    </div>
-    <div class="pagoda-description">
-      <p>
-        Shwezigon Pagoda is one of the most significant religious structures in Bagan. It is believed to enshrine a bone and tooth of Gautama Buddha. With its golden stupa and detailed architecture, it stands as a remarkable example of early Burmese temple design.
-      </p>
-    </div>
-
-    <div class="recommend-section">
-      <h2>Recommended Pagodas</h2>
-      <div class="recommend-grid">
-        <div class="recommend-card">
-          <img src="images/pagoda1.jpg" alt="Pagoda 1">
-          <h3>Ananda Temple</h3>
-        </div>
-        <div class="recommend-card">
-          <img src="images/pagoda2.jpg" alt="Pagoda 2">
-          <h3>Dhammayangyi Temple</h3>
-        </div>
-        <div class="recommend-card">
-          <img src="images/pagoda3.jpg" alt="Pagoda 3">
-          <h3>Htilominlo Temple</h3>
-        </div>
-        <div class="recommend-card">
-          <img src="images/pagoda4.jpg" alt="Pagoda 4">
-          <h3>Thatbyinnyu Temple</h3>
-        </div>
-      </div>
-    </div>
-  </div>
+  <footer>
+    &copy; 2025 Baganetic | Built with passion by students.
+  </footer>
 
   <script>
     function toggleMenu() {
-      alert("Menu toggled (you can implement sidebar or dropdown here).");
+      document.getElementById('navLinks').classList.toggle('active');
     }
   </script>
 </body>
-
 </html>

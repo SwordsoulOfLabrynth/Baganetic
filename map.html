@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baganetic - Map</title>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to right, #fef6e4, #fce8c2);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #f9e4b7;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      color: #aa7739;
+      font-size: 2em;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #5a3d1f;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #aa7739;
+    }
+
+    #map {
+      height: 80vh;
+      width: 90%;
+      max-width: 1200px;
+      margin: 40px auto;
+      border-radius: 15px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      border: 4px solid #f1d8a8;
+      overflow: hidden;
+    }
+
+    .map-title {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+      margin-top: 40px;
+      color: #7a5313;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f4e1b5;
+      color: #5a3d1f;
+      margin-top: auto;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 10px;
+      }
+
+      .map-title {
+        font-size: 2em;
+      }
+
+      #map {
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Baganetic</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="pagodas.html">Pagodas</a>
+      <a href="pagodaHistory.html">History</a>
+      <a href="map.html"><b>Map</b></a>
+    </nav>
+  </header>
+
+  <h2 class="map-title">Explore Pagodas on the Map</h2>
+  <div id="map"></div>
+
+  <footer>
+    &copy; 2025 Baganetic. All rights reserved.
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <!-- Add inside your <script> tag in map.html -->
+<script>
+  const map = L.map('map').setView([21.1717, 94.8585], 13);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Pagoda data with images
+  const pagodas = [
+    {
+      name: "Ananda Temple",
+      lat: 21.1724,
+      lng: 94.8580,
+      link: "pagodaDetils.html?name=ananda",
+      img: "778663-2996x2000-desktop-hd-bagan-wallpaper-image.jpg"
+    },
+    {
+      name: "Dhammayangyi Temple",
+      lat: 21.1640,
+      lng: 94.8625,
+      link: "pagodaDetils.html?name=dhammayangyi",
+      img: "18816989483_bd5cd4caf2_b.jpg"
+    },
+    {
+      name: "Shwesandaw Pagoda",
+      lat: 21.1678,
+      lng: 94.8552,
+      link: "pagodaDetils.html?name=shwesandaw",
+      img: "19250037408_52f957b1f3_b.jpg"
+    }
+  ];
+
+  // Add markers with image-enhanced popups
+  pagodas.forEach(p => {
+    const popupContent = `
+      <div style="text-align:center;">
+        <img src="${p.img}" alt="${p.name}" style="width:120px; height:auto; border-radius:8px; box-shadow:0 0 6px rgba(0,0,0,0.2);"><br>
+        <strong>${p.name}</strong><br>
+        <a href="${p.link}" style="color:#aa7739; font-weight:bold;">View Details</a>
+      </div>
+    `;
+    L.marker([p.lat, p.lng]).addTo(map).bindPopup(popupContent);
+  });
+</script>
+
+</body>
+</html>

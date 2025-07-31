@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Baganetic – Ananda Temple History</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    /* Reset & base */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background-color: #fffaf3;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header & navigation */
+    header {
+      background-color: #f9e4b7;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky; top:0; z-index:999;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .logo {
+      display: flex; align-items:center;
+    }
+    .hamburger {
+      width:28px; height:24px; background:none; border:none;
+      cursor:pointer; display:flex; flex-direction:column;
+      justify-content:space-around; padding:0;
+    }
+    .hamburger span {
+      height:3px; width:100%; background:#5a3d1f;
+      border-radius:2px; transition:transform .3s, opacity .3s;
+    }
+    .logo h1 {
+      font-family:'Playfair Display', serif;
+      color:#aa7739; font-size:1.6em; margin-left:12px;
+    }
+    /* Inline nav (desktop) */
+    .nav-inline a {
+      margin:0 12px; text-decoration:none;
+      color:#5a3d1f; font-weight:600; transition:color .3s;
+    }
+    .nav-inline a:hover { color:#aa7739; }
+
+    /* Side‑drawer */
+    .nav-drawer {
+      position:fixed; top:0; left:-240px;
+      width:220px; height:100%; background:#f9e4b7;
+      box-shadow:2px 0 8px rgba(0,0,0,0.2);
+      display:flex; flex-direction:column; padding-top:60px;
+      transition:left .3s ease; z-index:90;
+    }
+    .nav-drawer a {
+      padding:12px 20px; text-decoration:none;
+      color:#5a3d1f; font-weight:600;
+      border-bottom:1px solid rgba(0,0,0,0.05);
+    }
+    .nav-drawer a:hover { background:#f2dfc6; }
+
+    body.nav-open .nav-drawer { left:0; }
+    body.nav-open .hamburger span:nth-child(1) {
+      transform: translateY(10px) rotate(45deg);
+    }
+    body.nav-open .hamburger span:nth-child(2) { opacity:0; }
+    body.nav-open .hamburger span:nth-child(3) {
+      transform: translateY(-10px) rotate(-45deg);
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      background-color: #f2dfc6;
+      padding: 12px 40px;
+      font-size: 14px;
+      color: #8b5e3c;
+      font-weight: bold;
+    }
+    .breadcrumb a {
+      color: #8b5e3c; text-decoration:none;
+      margin-right:5px; font-weight:normal;
+    }
+
+    /* Main container */
+    .container {
+      max-width: 900px; margin: auto;
+      padding: 40px 20px;
+    }
+
+    /* Page title */
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5em;
+      color: #aa7739;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #f2dfc6;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    /* Featured photo */
+    .feature-photo {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .feature-photo img {
+      max-width: 100%; width: 100%;
+      border-radius: 12px; border: 2px solid #aa7739;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* History card */
+    .history-card {
+      background-color: #ffffffdd;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      margin-bottom: 60px;
+    }
+    .history-card h2 {
+      font-family:'Playfair Display', serif;
+      color:#5a3d1f; margin-bottom:15px;
+      font-size:1.6em;
+    }
+    .history-card p {
+      margin-bottom:18px;
+      text-align: justify;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #f2dfc6;
+      text-align: center;
+      padding: 25px 10px;
+      font-size: 0.9em;
+      color: #5a3d1f;
+      margin-top: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width:768px) {
+      .nav-inline { display: none; }
+      header { flex-direction: column; align-items: flex-start; }
+      .breadcrumb { padding:10px 20px; }
+      .container { padding:30px 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <h1>Baganetic</h1>
+    </div>
+    <nav class="nav-inline">
+      <a href="index.html">Home</a>
+      <a href="map.html">Map</a>
+      <a href="index.html#how">How It Works</a>
+      <a href="pagodas.html">Pagodas</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <aside class="nav-drawer">
+    <a href="index.html">Home</a>
+    <a href="map.html">Map</a>
+    <a href="index.html#how">How It Works</a>
+    <a href="pagodas.html">Pagodas</a>
+    <a href="index.html#contact">Contact</a>
+  </aside>
+
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> / 
+    <a href="pagodas.html">Pagodas</a> / 
+    <a href="pagodaDetils.html">Ananda Temple</a> / 
+    Ananda Temple History
+  </div>
+
+  <div class="container">
+    <div class="title">Ananda Temple History</div>
+
+    <div class="feature-photo">
+      <img src="18816989483_bd5cd4caf2_b.jpg" alt="Ananda Temple">
+    </div>
+
+    <div class="history-card">
+      <h2>Origins & Construction</h2>
+      <p>
+        Commissioned in 1105 AD by King Kyanzittha of Bagan, Ananda Temple stands as
+        a pinnacle of Mon and Indian architectural fusion. Its cruciform layout
+        symbolizes the Buddhist cosmos, and inside, four majestic standing Buddha
+        statues—each nearly 30 feet tall—face the cardinal directions.
+      </p>
+      <h2>Legend & Restoration</h2>
+      <p>
+        Legend relates that King Kyanzittha himself inscribed the temple’s design
+        after a vision of Mount Meru. Over the centuries, earthquakes in the 1970s
+        and early 2000s necessitated careful restorations, led by both local
+        craftsmen and UNESCO experts, preserving its original symmetry.
+      </p>
+      <h2>Visiting Today</h2>
+      <p>
+        Today, pilgrims and visitors walk its candlelit corridors, admire delicate
+        Jataka frescoes, and experience a serene ambiance that has endured for
+        nine centuries. Seasonal festivals, particularly during the full moon of
+        Kason, draw thousands who come to pay homage and offer gold leaf.
+      </p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Baganetic. Guiding Your Sacred Journey 🛕
+  </footer>
+
+  <script>
+    const btn = document.querySelector('.hamburger');
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('nav-open');
+    });
+    document.querySelectorAll('.nav-drawer a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.body.classList.remove('nav-open');
+      });
+    });
+  </script>
+
+</body>
+</html>
+ 
