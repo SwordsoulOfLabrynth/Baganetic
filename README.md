@@ -1,12 +1,41 @@
 # 🏛️ Baganetic - Bagan Pagodas Guide & Interactive Map
 
-A comprehensive web application for exploring Bagan's ancient pagodas with detailed information, interactive maps, and user authentication.
+> **Flagship University Special Project (Highest Cohort Grade — Grade A)**  
+> An intelligent digital heritage and route-planning platform for exploring Bagan's ancient pagodas. Combines Leaflet spatial mapping, A* shortest-path routing, an AI conversational assistant, and an admin management suite.
+
+[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-4.19-000000?style=flat-square&logo=express&logoColor=white)](https://expressjs.com/)
+[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat-square&logo=python&logoColor=white)](https://python.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb&logoColor=white)](https://mongodb.com/)
+[![Leaflet](https://img.shields.io/badge/Leaflet-1.9-199900?style=flat-square&logo=leaflet&logoColor=white)](https://leafletjs.com/)
+[![Algorithm](https://img.shields.io/badge/Routing-A*_Shortest_Path-FF6F00?style=flat-square)](https://en.wikipedia.org/wiki/A*_search_algorithm)
+[![Status](https://img.shields.io/badge/Cohort_Grade-Grade_A-brightgreen?style=flat-square)](https://github.com/SwordsoulOfLabrynth/Baganetic)
+
+---
+
+## 📸 Visual Showcase
+
+<div align="center">
+  <img src="docs/images/home-page.jpg" alt="Baganetic Web Platform Homepage" width="100%" />
+</div>
+
+<br/>
+
+| **Pagoda Exploration & Heritage Details** | **Curated Pagoda Directory** |
+|:---:|:---:|
+| <img src="docs/images/pagoda-detail.jpg" alt="Pagoda Detail View" width="100%" /> | <img src="docs/images/famous-pagodas.jpg" alt="Famous Pagodas Directory" width="100%" /> |
+
+| **Interactive Map & Discovery** | **Architectural Background & About** |
+|:---:|:---:|
+| <img src="docs/images/pagoda-page.jpg" alt="Pagoda Interactive View" width="100%" /> | <img src="docs/images/about-section.jpg" alt="About Bagan Heritage" width="100%" /> |
+
+---
 
 ## ✨ Features
 
 ### 🗺️ **Interactive Map & Navigation**
 - Interactive map showing all pagoda locations
-- Shortest route planning between pagodas using A* algorithm
+- A* route planning over pagoda nodes, with road-based route visualization when available
 - Detailed location information and directions
 
 ### 🏛️ **Comprehensive Pagoda Database**
