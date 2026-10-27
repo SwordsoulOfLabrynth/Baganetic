@@ -21,13 +21,13 @@
 
 <br/>
 
-| **Pagoda Exploration & Heritage Details** | **Curated Pagoda Directory** |
+| **Interactive Map & Route Planning** | **Curated Pagoda Directory & Search** |
 |:---:|:---:|
-| <img src="docs/images/pagoda-detail.jpg" alt="Pagoda Detail View" width="100%" /> | <img src="docs/images/famous-pagodas.jpg" alt="Famous Pagodas Directory" width="100%" /> |
+| <img src="docs/images/map-page.jpg" alt="Interactive Map & Route Planning" width="100%" /> | <img src="docs/images/pagoda-page.jpg" alt="Pagoda Directory & Search" width="100%" /> |
 
-| **Interactive Map & Discovery** | **Architectural Background & About** |
+| **Pagoda Exploration & Heritage Details** | **About Bagan Heritage & Platform** |
 |:---:|:---:|
-| <img src="docs/images/pagoda-page.jpg" alt="Pagoda Interactive View" width="100%" /> | <img src="docs/images/about-section.jpg" alt="About Bagan Heritage" width="100%" /> |
+| <img src="docs/images/pagoda-detail.jpg" alt="Pagoda Detail View" width="100%" /> | <img src="docs/images/about-section.jpg" alt="About Bagan Heritage" width="100%" /> |
 
 ---
 
